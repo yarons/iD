@@ -41,7 +41,8 @@ export function operationDelete(selectedIDs, context) {
                 }
 
                 nextSelectedID = nodes[i];
-                nextSelectedLoc = context.entity(nextSelectedID).loc;
+                var nextSelectedNode = context.hasEntity(nextSelectedID);
+                nextSelectedLoc = nextSelectedNode && nextSelectedNode.loc;
             }
         }
 
